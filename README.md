@@ -6,7 +6,8 @@
 
 ## 功能特性
 - 主要使用Python作为入口程序和进程守护，轻松防止因AutoHotKey导致的多数带有反作弊的游戏无法启动的问题
-- 支持国内主流音乐软件（网易云音乐、QQ 音乐、酷狗音乐、酷我音乐、汽水音乐）
+- 支持原版NowPlaying所有服务
+- 国内主流音乐软件（网易云音乐、QQ 音乐、酷狗音乐、酷我音乐、汽水音乐）
 - 支持国外平台（Spotify、Apple Music）
 - 支持点歌（卡西米尔唱片机、花花直播助手）
 - 支持本地播放器（PotPlayer、Foobar2000、洛雪音乐、MusicFree）
@@ -57,14 +58,8 @@
 
 ## 如何编译
 
-- 由于版权原因，该项目仅包含后端代码
-- 目前直接打包Python可执行文件main.py即可
-  - 运行：运行 NowPlayingApplication 类的 main 方法
-  - 打包：双击 IDEA 右侧 Maven - Lifecycle 的 clean，然后再双击 package，即可在 target 目录下生成 JAR 包
-  - JAR To EXE：你可以使用 [exe4j](https://www.ej-technologies.com/exe4j/download) 将 JAR 包转为 EXE
-- 外部程序 `external_programs/AudioService/GetMusicStatus` 的代码使用 C# 编写，使用 VS Code 打开
-  - 运行：`dotnet run`
-  - 打包：`dotnet publish -c Release -r win-x64 --self-contained -o ./publish`
+- 目前直接打包Python可执行文件main.py然后拖入已经打包好的NowPlaying运行文件夹中代替NowPlaying运行即可
+- NowPlaying的编译过程请前往[原版NowPlaying的Github页面](https://github.com/Widdit/now-playing-service)的README中查询
 
 
 
