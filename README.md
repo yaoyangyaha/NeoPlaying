@@ -1,15 +1,11 @@
-# NowPlaying Service
+# NeoPlaying--NowPlayingService python重构改进衍生版
 
-**▶︎ ၊၊||၊|။|||| |   一款直播歌曲歌名显示组件**
-
-QQ 交流群：150453391
+原版NowPlayingService的QQ 交流群：150453391
 
 ![](/images/now_playing_release_banner.png)
 
-
-
 ## 功能特性
-
+- 主要使用Python作为入口程序和进程守护，轻松防止因AutoHotKey导致的多数带有反作弊的游戏无法启动的问题
 - 支持国内主流音乐软件（网易云音乐、QQ 音乐、酷狗音乐、酷我音乐、汽水音乐）
 - 支持国外平台（Spotify、Apple Music）
 - 支持点歌（卡西米尔唱片机、花花直播助手）
@@ -38,7 +34,7 @@ QQ 交流群：150453391
 
 ### 方法一
 
-- 前往 [Release](https://github.com/Widdit/now-playing-service/releases) 页面下载整合包，开箱即用，无需进行任何配置
+- 前往 [Release](https://github.com/yaoyangyaha/NeoPlaying/releases) 页面下载整合包，开箱即用，无需进行任何配置
 
 ### 方法二
 
@@ -62,7 +58,7 @@ QQ 交流群：150453391
 ## 如何编译
 
 - 由于版权原因，该项目仅包含后端代码
-- 核心代码使用 Java 编写，使用 IDEA 打开即可
+- 目前直接打包Python可执行文件main.py即可
   - 运行：运行 NowPlayingApplication 类的 main 方法
   - 打包：双击 IDEA 右侧 Maven - Lifecycle 的 clean，然后再双击 package，即可在 target 目录下生成 JAR 包
   - JAR To EXE：你可以使用 [exe4j](https://www.ej-technologies.com/exe4j/download) 将 JAR 包转为 EXE
@@ -73,9 +69,7 @@ QQ 交流群：150453391
 
 
 ## 程序原理
-
-首先通过 `Assets/AudioService/GetMusicStatus.exe` 程序检测音乐软件的播放状态（Playing, Paused, None）和歌曲信息，每隔 1 秒输出一次。
-
+通过main.py掉起service从而运行 `Assets/AudioService/GetMusicStatus.exe` 程序检测音乐软件的播放状态（Playing, Paused, None）和歌曲信息，每隔 1 秒输出一次。
 接收命令行参数（具体取值请参考 [源码](https://github.com/Widdit/now-playing-service/blob/master/external_programs/AudioService/GetMusicStatus/Program.cs)）：
 
 | 参数        | 含义 | 描述                                                         |
